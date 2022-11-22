@@ -14,25 +14,130 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 0 2rem;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h1 {
+    margin: 1.8rem 0;
+    font-weight: 400;
   }
-  to {
-    transform: rotate(360deg);
+  ul {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    h4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      small {
+        margin: 5px 0 0 10px;
+        font-size: calc(6px + 1vmin);
+        color: #49fb35;
+        text-shadow: 0 0 7px #49fb35, 0 0 10px #49fb35, 0 0 15px #49fb35;
+      }
+    }
+    li {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      img {
+        border-radius: 10px 10px 0 0;
+        width: 150px;
+        height: auto;
+        max-inline-size: 100%;
+        
+      }
+    }
+    p {
+      font-size: calc(4px + 2vmin);
+    }
+  }
+  .verified {
+    color: rgb(0, 153, 255);
+    font-size: calc(4px + 1vmin);
+    letter-spacing: 0.1rem;
+
+    strong {
+      position: relative;
+      top: -8px;
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    input,textarea {
+      padding: 12px 8px;
+      border-radius: 8px;
+      margin: 18px 18px 18px 0;
+      font-family: inherit;
+      resize: none;
+      border: none;
+    }
+    .avatar{
+      width: 350px;
+    }
+
+    textarea{
+      padding-top:4px;
+      padding-bottom: 4px;
+      width: 350px;
+      position: relative;
+      top:50%;
+     
+      
+    }
+    
+    button {
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+      color:white;
+      background-color: purple;
+
+      &:hover {
+        filter:brightness(1.4)
+      }
+    }
+  }
+
+  hr {
+    height: 0.5px;
+    border: none;
+    background-color: gray;
+  }
+}
+.contentSpinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loadingSpinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: purple transparent purple transparent;
+    box-shadow: 0 0 1px purple, 0 0 22px purple;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
